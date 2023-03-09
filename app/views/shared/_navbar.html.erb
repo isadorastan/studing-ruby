@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
@@ -13,6 +13,7 @@
             <%= link_to "About", about_path, class: "nav-link" %>
         </li>
       </ul>
+      <%= link_to "Sign in", sign_in_path, class: "nav-link" %>
     </div>
   </div>
 </nav>

@@ -1,27 +1,30 @@
-<h1>Sign Up</h1>
+<div class="mx-auto w-50 mt-5">
+    <h1 class="mb-3">Sign Up</h1>
 
-<%= form_with model: @user, url: sign_up_path do |form| %>
-    <% if @user.errors.any? %>
-        <div class="alert alert-danger">
-            <% @user.errors.full_messages.each do |message| %>
-                <div><%= message %></div>
-            <% end %>
+    <%= form_with model: @user, url: sign_up_path do |form| %>
+        <% if @user.errors.any? %>
+            <div class="alert alert-danger">
+                <% @user.errors.full_messages.each do |message| %>
+                    <div><%= message %></div>
+                <% end %>
+            </div>
+        <% end %>
+
+        <div class="mb-3">
+            <%= form.label :email %>
+            <%= form.text_field :email, class: "form-control", placeholder: "steve@apple.com" %>
+        </div>
+        <div class="mb-3">
+        <%= form.label :password %>
+            <%= form.password_field :password, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+            <%= form.label :password_confirmation %>
+            <%= form.password_field :password_confirmation, class: "form-control" %>
+        </div>
+        <div class="mb-3 mx-auto d-flex flex-column align-items-center">
+            <%= form.submit "Sign up", class: "btn btn-primary w-50 mb-3" %>
+            <%= link_to "back to sign in", sign_in_path %>
         </div>
     <% end %>
-
-    <div class="mb-3">
-        <%= form.label :email %>
-        <%= form.text_field :email, class: "form-control", placeholder: "steve@apple.com" %>
-    </div>
-    <div class="mb-3">
-    <%= form.label :password %>
-        <%= form.password_field :password, class: "form-control" %>
-    </div>
-    <div class="mb-3">
-        <%= form.label :password_confirmation %>
-        <%= form.password_field :password_confirmation, class: "form-control" %>
-    </div>
-    <div class="mb-3">
-        <%= form.submit "Sign up", class: "btn btn-primary" %>
-    </div>
-<% end %>
+<div>
