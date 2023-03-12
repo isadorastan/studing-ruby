@@ -1,0 +1,14 @@
+<div class="mx-auto w-50 mt-5">
+    <h1 class="mb-3">Forgot your password?</h1>
+
+    <%= form_with url: password_reset_path do |form| %>
+        <div class="mb-3">
+            <%= form.label :email %>
+            <%= form.text_field :email, class: "form-control", placeholder: "steve@apple.com" %>
+        </div>
+        
+        <div class="mb-3 mx-auto d-flex flex-column align-items-center">
+            <%= form.submit "Reset Password", class: "btn btn-primary w-50 mb-3" %>
+        </div>
+    <% end %>
+<div>
